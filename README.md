@@ -1,4 +1,4 @@
-# Web Development Course
+# CS2205 -> Web Programming 1 -> UOPeople
 
 ## Overview
 
