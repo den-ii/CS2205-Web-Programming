@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  background-color: #fff;
+  padding: 2rem;
+}
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  padding: 1rem 0;
+}
+
+input[name="name"],
+input[name="email"],
+input[name="phone"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 4px;
+  border: 1px solid #333;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 6px;
+}
+
+.input--container {
+  margin-bottom: 1rem;
+}
+
+.input--error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  opacity: 0;
+}
+
+.show-error
+  fieldset:has(input[name="preferred-contact"]:invalid)
+  + .input--error {
+  opacity: 1;
+}
+
+.show-error input:invalid + .input--error {
+  opacity: 1;
+}
+
+.show-error textarea:invalid + .input--error {
+  opacity: 1;
+}
+
+.show-error select:invalid + .input--error {
+  opacity: 1;
+}
+
+.preferred-contact--options {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.preferred-contact--options div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #ececec;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preview main {
+  padding: 0 1rem 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.preview--container span {
+  font-weight: 600;
+  display: block;
+}
+
+.preview--container p {
+  margin-bottom: 1rem;
+  margin-top: 4px;
+}
+
+.preview .submit--container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

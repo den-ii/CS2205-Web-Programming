@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Assignment Activity Unit 3</title>
+  </head>
+  <body>
+    <main>
+      <h1>Contact Us</h1>
+      <form>
+        <div class="input--container">
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            pattern="[a-zA-Z ]{2,}"
+            required
+            placeholder="Enter your name"
+            title="Name is required"
+          />
+          <p class="input--error">Name is required</p>
+        </div>
+        <div class="input--container">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
+            placeholder="Enter your email"
+            title="Email is required"
+          />
+          <p class="input--error">Email is required, must contain @</p>
+        </div>
+        <div class="input--container">
+          <label for="phone">Phone Number: </label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            pattern="[0-9]{10}"
+            required
+            maxlength="10"
+            minlength="10"
+            placeholder="Enter your phone"
+            title="Phone Number is required"
+          />
+          <p class="input--error">
+            Phone Number is required, must be 10 digits
+          </p>
+        </div>
+        <div class="input--container">
+          <label for="message">Message: </label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Type your message here..."
+            title="A message is required, must be at least 5 characters"
+            required
+            rows="5"
+            minlength="5"
+            maxlength="250"
+          ></textarea>
+          <p class="input--error">
+            A message is required, must be at least 5 characters
+          </p>
+        </div>
+        <div class="input--container">
+          <p>Preferred Contact Method:</p>
+          <fieldset class="preferred-contact--options" name="preferred-contact">
+            <div>
+              <input
+                type="radio"
+                id="preferred-email"
+                name="preferred-contact"
+                required
+                value="Email"
+              />
+              <label for="preferred-email">Email</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="preferred-phone"
+                name="preferred-contact"
+                value="Phone"
+              />
+              <label for="preferred-phone">Phone</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="preferred-both"
+                name="preferred-contact"
+                value="Both"
+              />
+              <label for="preferred-both">Both</label>
+            </div>
+          </fieldset>
+          <p class="input--error">Select a preferred contact method</p>
+        </div>
+        <div class="input--container">
+          <label for="inquiry">Inquiry Type:</label>
+          <select name="inquiry" id="inquiry" required>
+            <option value="">Select an option</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Support Request">Support Request</option>
+            <option value="Feedback">Feedback</option>
+          </select>
+          <p class="input--error">Select an inquiry type</p>
+        </div>
+        <div>
+          <button
+            type="submit"
+            formmethod="get"
+            formaction="./preview.html"
+            onclick="showFormError()"
+          >
+            Preview
+          </button>
+          <button
+            type="submit"
+            formmethod="post"
+            onclick="showFormError()"
+            formaction="https://nocodeform.io/f/67b5daa99eec1214787fa332"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+  <script>
+    function showFormError() {
+      console.log("showFormError");
+      document.querySelector("form").classList.add("show-error");
+    }
+  </script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Assignment Activity Unit 3</title>
+  </head>
+  <body class="preview">
+    <main>
+      <h1>Preview</h1>
+      <div class="preview--container">
+        <div>
+          <span>Name:</span>
+          <p id="name"></p>
+        </div>
+        <div>
+          <span>Email Address:</span>
+          <p id="email"></p>
+        </div>
+        <div>
+          <span>Phone Number:</span>
+          <p id="phone"></p>
+        </div>
+        <div>
+          <span>Message:</span>
+          <p id="message"></p>
+        </div>
+        <div>
+          <span>Preferred Contact Method:</span>
+          <p id="contact"></p>
+        </div>
+        <div>
+          <span>Inquiry Type:</span>
+          <p id="inquiry"></p>
+        </div>
+      </div>
+
+      <form>
+        <input type="hidden" id="name" name="name" />
+        <input type="hidden" id="email" name="email" />
+        <input type="hidden" id="phone" name="phone" />
+        <input type="hidden" id="message" name="message" />
+        <input type="hidden" id="contact" name="preferred-contact-method" />
+        <input type="hidden" id="inquiry" name="inquiry-type" />
+
+        <div class="submit--container">
+          <a href="./index.html"> Go back </a>
+          <button
+            type="submit"
+            formmethod="post"
+            formaction="https://nocodeform.io/f/67b5daa99eec1214787fa332"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+  <script>
+    // Function to get URL parameters
+    console.log("location.search", window.location);
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const name = getQueryParam("name");
+    document.querySelector("p#name").textContent = name;
+    document.querySelector("input#name").textContent = name;
+    const email = getQueryParam("email");
+    document.querySelector("p#email").textContent = email;
+    document.querySelector("input#email").textContent = email;
+    const phone = getQueryParam("phone");
+    document.querySelector("p#phone").textContent = phone;
+    document.querySelector("input#phone").textContent = phone;
+    const message = getQueryParam("message");
+    document.querySelector("p#message").textContent = message;
+    document.querySelector("input#message").textContent = message;
+    const preview_contact_method = getQueryParam("preferred-contact");
+    document.querySelector("p#contact").textContent = preview_contact_method;
+    document.querySelector("input#contact").textContent =
+      preview_contact_method;
+    const inquiry_type = getQueryParam("inquiry");
+    document.querySelector("p#inquiry").textContent = inquiry_type;
+    document.querySelector("input#inquiry").textContent = inquiry_type;
+  </script>
+</html>
