@@ -1,4 +1,4 @@
-# CS2205 -> Web Programming 1 -> UOPeople
+# CS2205 - Web Programming 1
 
 ## Overview
 
@@ -90,3 +90,5 @@ Students will be evaluated through:
 ## Contact and Support
 
 For course-related inquiries, please contact the instructor via email or the course discussion forum.
+
+&copy; University of the People
