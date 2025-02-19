@@ -42,6 +42,10 @@ textarea {
   opacity: 0;
 }
 
+fieldset {
+  border: none;
+}
+
 .show-error
   fieldset:has(input[name="preferred-contact"]:invalid)
   + .input--error {
@@ -100,8 +104,12 @@ button[type="submit"] {
   margin-top: 4px;
 }
 
-.preview .submit--container {
+.submit--container {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.submit--container .submit--button {
+  color: #fff;
+  background-color: #333;
 }
