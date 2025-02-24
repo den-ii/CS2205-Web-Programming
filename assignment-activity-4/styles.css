@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  color: "#333";
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 600px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form button {
+  display: block;
+  padding: 0.7rem;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #1f75fe;
+  border: none;
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.input--container {
+  margin-bottom: 1rem;
+}
+
+.display {
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.bigger {
+  font-size: 1.5rem;
+}
+
+.input--container label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.input--container input {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: medium;
+  font-family: "Rubik", sans-serif;
+}
+
+form select {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: medium;
+  font-family: "Rubik", sans-serif;
+  background-color: #fff;
+}

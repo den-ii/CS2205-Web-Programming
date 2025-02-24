@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <h1>Temperature Converter</h1>
+      <form>
+        <div>
+          <div class="input--container">
+            <label for="temperature">Temperature:</label>
+            <input
+              type="text"
+              name="temperature"
+              id="temperature"
+              required
+              placeholder="Enter a valid number e.g 49"
+            />
+          </div>
+          <div class="input--container">
+            <label for="unit">Unit:</label>
+            <select name="unit" id="unit">
+              <option value="celsius">Celsius to Fahrenheit</option>
+              <option value="fahrenheit">Fahrenheit to Celsius</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div class="display"></div>
+        </div>
+        <div class="">
+          <button id="convert">Convert</button>
+        </div>
+      </form>
+    </main>
+    <script defer src="./script.js"></script>
+  </body>
+</html>
