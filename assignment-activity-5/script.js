@@ -14,79 +14,63 @@ form.addEventListener("submit", function (e) {
   taskInput.value = newTask.value;
   taskInput.disabled = true;
 
-  insertCheckBox(taskItem, taskInput, inputContainer);
+  insertCheckBox(inputContainer);
   inputContainer.appendChild(taskInput);
 
   taskItem.appendChild(inputContainer);
   tasksContainer.appendChild(taskItem);
-  insertEditButton(taskItem, taskInput, utilContainer);
-  insertRemoveButton(taskItem, utilContainer);
+  insertEditButton(utilContainer);
+  insertRemoveButton(utilContainer);
   taskItem.appendChild(utilContainer);
 
   newTask.value = ""; // Clear input after adding task
 });
 
-function insertCheckBox(taskItem, taskInput, inputContainer) {
-  const checkBox = document.createElement("button");
-  checkBox.classList.add("checkbox");
+tasksContainer.addEventListener("click", function (e) {
+  const taskItem = e.target.closest("li");
 
-  checkBox.addEventListener("click", function () {
+  if (
+    e.target.classList.contains("checkbox") ||
+    e.target.classList.contains("fa-check")
+  ) {
     taskItem.classList.toggle("checked");
+    const checkBox = e.target.closest(".checkbox");
     if (taskItem.classList.contains("checked")) {
       checkBox.innerHTML = '<i class="fa-solid fa-check"></i>';
     } else {
-      checkBox.textContent = "";
+      checkBox.innerHTML = "";
     }
-  });
+  } else if (e.target.classList.contains("edit")) {
+    const taskInput = e.target.parentElement.previousElementSibling.lastChild;
+    console.log(taskInput);
+    const promptValue = prompt("Edit Task:", taskInput.value);
+    if (!promptValue || promptValue.trim() == "") {
+      return;
+    } else {
+      taskInput.value = promptValue;
+    }
+    return;
+  } else if (e.target.classList.contains("remove")) {
+    tasksContainer.removeChild(taskItem);
+  }
+});
+
+function insertCheckBox(inputContainer) {
+  const checkBox = document.createElement("button");
+  checkBox.classList.add("checkbox");
   inputContainer.appendChild(checkBox);
 }
 
-function insertEditButton(taskItem, taskInput, utilContainer) {
+function insertEditButton(utilContainer) {
   const editButton = document.createElement("button");
   editButton.classList.add("edit");
   editButton.textContent = "Edit";
-
-  let previousValue = taskInput.value; // Store initial value
-
-  function editBlurHandler() {
-    setTimeout(() => {
-      taskInput.value = previousValue; // Revert to last saved value
-      editButton.textContent = "Edit";
-      taskItem.classList.remove("edit-clicked");
-      taskInput.disabled = true;
-    }, 900);
-  }
-
-  editButton.addEventListener("click", function () {
-    if (editButton.textContent === "Save") {
-      previousValue = taskInput.value; // Update saved value
-
-      // Save state
-      taskInput.removeEventListener("blur", editBlurHandler);
-      editButton.textContent = "Edit";
-      taskItem.classList.add("save-clicked");
-      taskItem.classList.remove("edit-clicked");
-      taskInput.disabled = true;
-    } else {
-      // Edit state
-      editButton.textContent = "Save";
-      taskInput.disabled = false;
-      taskInput.focus();
-      taskItem.classList.remove("save-clicked");
-      taskItem.classList.add("edit-clicked");
-      taskInput.addEventListener("blur", editBlurHandler, { once: true }); // Ensure it's added only once
-    }
-  });
-
   utilContainer.appendChild(editButton);
 }
 
-function insertRemoveButton(taskItem, utilContainer) {
+function insertRemoveButton(utilContainer) {
   const removeButton = document.createElement("button");
   removeButton.classList.add("remove");
   removeButton.textContent = "Remove";
-  removeButton.addEventListener("click", function () {
-    tasksContainer.removeChild(taskItem);
-  });
   utilContainer.appendChild(removeButton);
 }
