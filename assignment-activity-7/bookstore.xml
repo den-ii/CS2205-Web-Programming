@@ -1,0 +1,22 @@
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <book id="1" available="true">
+        <title>
+            The Great Gatsby
+            <publicationYear>1925</publicationYear>
+        </title>
+        <author>
+            <firstName>F. Scott</firstName>
+            <lastName>Fitzgerald</lastName>
+        </author>
+    </book>
+    <book id="2" available="false">
+        <title>
+            To Kill a Mockingbird
+            <publicationYear>1960</publicationYear>
+        </title>
+        <author>
+            <firstName>Harper</firstName>
+            <lastName>Lee</lastName>
+        </author>
+    </book>
+</catalog>

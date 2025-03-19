@@ -1,4 +1,4 @@
-# To-Do List Application - Assignment Ac tivity Unit 5
+# To-Do List Application - Assignment Activity Unit 5
 
 ## Overview
 
